@@ -418,7 +418,7 @@ module StateMachine
                 if new_attributes
                   attributes = new_attributes.dup
                   attributes.stringify_keys!
-                  ignore = remove_attributes_protected_from_mass_assignment(attributes).keys
+                  ignore = sanitize_for_mass_assignment(attributes).keys
                 else
                   ignore = []
                 end
